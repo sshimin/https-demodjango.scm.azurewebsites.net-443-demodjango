@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>matruity value calculating</title>
+        <style>
+          body {
+                 background-image: url('https://3uvqeisena11zr8q939vd5i1-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/ROIcalc.jpg');
+                background-repeat: no-repeat;
+                 background-attachment: fixed;
+                background-size: cover;
+                }
+          label{
+            width: 900px;
+            display: inline-block;
+            text-align: right;
+            color:black;
+          }
+          fieldset {
+       background-image: url('https://www.id916.com/wp-content/uploads/2015/07/o-SUCCESS-AND-MOTIVATION-facebook.jpg');
+       background-repeat: no-repeat;
+       background-attachment: fixed;
+                background-size: cover;
+    }
+
+        </style>
+      </head>
+<body>
+
+    <center>
+
+        </center>
+        <br>
+            <BR><br>
+              <BR><br>
+                <BR>
+        <form action="add"   method="POST">
+
+            {% csrf_token %}
+           <B><label for="policy">POLICY NUMBER:</label>
+            <input type="text" id="policy" name="num1" value="{{result}}" maxlength="7" >
+
+            <input type="submit" onclick="return validation() ">
+            <input type="text" id="error" name="num3" value="{{result15}}" >
+            <br>
+            <BR>
+            <label for="startdate">START DATE:</label>
+            <input type="text" id="startdate" name="sdate" value="{{result2}} "><br>
+            <br>
+            <BR>
+            <label for="permium">PERMIUM:</label>
+            <input type="text" id="permium" name="pamt" value="{{result3}}"><br>
+            <br>
+
+            <BR>
+            <label for="membership">MEMBERSHIP:</label>
+            <input type="text" id="membership" name="mship" value="{{result4}}"><br>
+            <br>
+            <BR>
+            <label for="upliftpercentage">UPLIFT PERCENTAGE:</label>
+           <input type="text" id="upliftpercentage" name="percentage" value="{{result5}}"><br>
+           <br>
+           <BR>
+           <label for="maturity">MATURITY AMOUNT:</label>
+           <input type="text" id="maturity" name="matrurityamt" value="{{result6}}" >
+           <button type="submit" formaction=" ">reset</button></B>
+
+            <script type="text/javascript">
+
+
+              function validation()
+              {
+                var policynum = document.getElementById("policy").value;
+                var num = policynum.substring(1,policynum.length)
+
+                if((policynum.startsWith("A")  || policynum.startsWith("B") || policynum.startsWith("C")) && (/^[0-9]+$/.test(num)))
+                 {
+                  return true;
+                 }
+                 else
+                  {
+                   alert("invalid format");
+                   return false;
+                  }
+              }
+            </script>
+      </form>
+  </body>
+</html>
